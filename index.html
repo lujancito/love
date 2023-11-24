@@ -1,1 +1,75 @@
-<h1>hola</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniversario</title>
+    <link rel="stylesheet" href="stiles.css">
+</head>
+<body>
+    <div class="container">
+
+        <h2>TE AMO ICHY  <br><span>FELIZ ANIVERSARIO DE 3 AÑOS</span></h2>
+    </div>
+    <script src="anime.min.js"></script>
+    <script>
+        const container = document.querySelector('.container');
+        for (var i  = 0; i<=45; i++){
+            const hearts = document.createElement('div');
+            hearts.classList.add('heart');
+            container.appendChild(hearts);
+        }
+        function animateHearts(){
+            anime({
+                targets: '.heart',
+                translateX: function(){
+                    return anime.random(-700, 700);
+                },
+                translateY: function(){
+                    return anime.random(-500, 500);
+                },
+                rotate: 45,
+                scale: function(){
+                    return anime.random(1, 5);
+                },
+                easing: 'easeInOutBack',
+                duration: 3000,
+                delay: anime.stagger(10),
+                complete: animateHearts,
+
+            })
+        }
+
+        animateHearts()
+        const container2 = document.querySelector('.container');
+        for (var i  = 0; i<=45; i++){
+            const hearts = document.createElement('div');
+            hearts.classList.add('heart2');
+            container2.appendChild(hearts);
+        }
+        function animateHearts2(){
+            anime({
+                targets: '.heart2',
+                translateX: function(){
+                    return anime.random(-700, 700);
+                },
+                translateY: function(){
+                    return anime.random(-500, 500);
+                },
+                rotate: 45,
+                scale: function(){
+                    return anime.random(1, 5);
+                },
+                easing: 'easeInOutBack',
+                duration: 3000,
+                delay: anime.stagger(10),
+                complete: animateHearts2,
+
+            })
+        }
+
+        animateHearts2()
+
+    </script>
+</body>
+</html>
